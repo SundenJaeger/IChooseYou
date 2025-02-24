@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#FFFFFF"
+    android:background="@drawable/bgpoke"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -30,18 +30,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="16dp">
-        <TextView
-            android:textColor="#000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Username: "
-            android:textSize="20sp"
-            android:layout_marginEnd="8dp"/>
+
         <EditText
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Enter Username..."/>
+            android:layout_weight="1"
+            android:background="#CACACA"
+            android:layout_marginBottom="15dp"
+            android:padding="15dp"
+            android:hint="Enter Username" />
     </LinearLayout>
 
     <LinearLayout
@@ -49,18 +46,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="16dp">
-        <TextView
-            android:textColor="#000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email:         "
-            android:textSize="20sp"
-            android:layout_marginEnd="8dp"/>
         <EditText
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Enter Email..."
+            android:layout_weight="1"
+            android:background="#CACACA"
+            android:layout_marginBottom="15dp"
+            android:padding="15dp"
+            android:hint="Enter Email"
             android:inputType="textEmailAddress"/>
     </LinearLayout>
 
@@ -69,18 +62,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="16dp">
-        <TextView
-            android:textColor="#000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Password: "
-            android:textSize="20sp"
-            android:layout_marginEnd="8dp"/>
         <EditText
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Enter Password..."
+            android:layout_weight="1"
+            android:background="#CACACA"
+            android:layout_marginBottom="15dp"
+            android:padding="15dp"
+            android:hint="Enter Username"
             android:inputType="textPassword"/>
     </LinearLayout>
 
@@ -89,18 +78,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="24dp">
-        <TextView
-            android:textColor="#000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirm:    "
-            android:textSize="20sp"
-            android:layout_marginEnd="8dp"/>
         <EditText
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Confirm Password..."
+            android:layout_weight="1"
+            android:background="#CACACA"
+            android:layout_marginBottom="15dp"
+            android:padding="15dp"
+            android:hint="Enter Password"
             android:inputType="textPassword"/>
     </LinearLayout>
 

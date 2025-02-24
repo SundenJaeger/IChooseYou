@@ -2,11 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@drawable/bgpoke"
     android:orientation="vertical"
     android:padding="24dp">
 
+
     <ImageView
+        android:layout_marginTop="70dp"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
@@ -42,7 +44,7 @@
             android:background="#CACACA"
             android:layout_marginBottom="15dp"
             android:padding="15dp"
-            android:hint="Enter Username..." />
+            android:hint="Enter Username" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,7 +63,7 @@
             android:layout_weight="1"
             android:background="#CACACA"
             android:padding="15dp"
-            android:hint="Enter Password..."
+            android:hint="Enter Password"
             android:layout_marginBottom="15dp"
             android:inputType="textPassword" />
     </LinearLayout>
