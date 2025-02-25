@@ -29,6 +29,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/username"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -45,40 +46,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#CACACA"
-            android:padding="15dp"
-            android:hint="Enter Email"
-            android:inputType="textEmailAddress"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#CACACA"
-            android:padding="15dp"
-            android:hint="Enter Username"
-            android:inputType="textPassword"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <EditText
+            android:id="@+id/password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -89,11 +57,39 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#CACACA"
+            android:padding="15dp"
+            android:hint="Enter Email"
+            android:inputType="textEmailAddress"/>
+
+    </LinearLayout>
+
     <Button
+        android:id="@+id/register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTER"
         android:textColor="#FFFFFF"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="#FF0000"/>
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#939191"/>
 </LinearLayout>

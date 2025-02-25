@@ -80,7 +80,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ralphpic"
+                        android:src="@drawable/rjpic"
                         android:padding="5dp"/>
 
                     <TextView
@@ -106,4 +106,26 @@
                 android:paddingHorizontal="10dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/go_back_button_dev"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="Go Back"
+            android:textColor="@color/black"
+            app:backgroundTint="#CACACA"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/back_to_icon"
+            app:iconGravity="start"
+            app:iconPadding="8dp"
+            app:iconSize="35dp"
+            app:iconTint="@color/black" />
+
+    </FrameLayout>
 </LinearLayout>
