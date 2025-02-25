@@ -5,16 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity"
+    android:layout_marginTop="30dp"
     android:orientation="vertical"
-    android:layout_marginTop="30dp">
+    tools:context=".ProfileActivity">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_gravity="center"
         android:scaleType="fitXY"
-        android:src="@drawable/profile"/>
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/user" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,164 +30,126 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="45dp"
         android:fontFamily="sans-serif-black"
         android:text="john.doe@gmail.com"
-        android:layout_marginBottom="45dp"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <FrameLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp">
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_edittext"
-            android:paddingEnd="300dp"
-            android:paddingBottom="45dp"
-            tools:ignore="RtlSymmetry" />
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/privacy_icon"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="6dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Privacy"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-condensed"
+            android:text = "Edit Profile"
+            android:gravity="start|center_vertical"
             android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="110dp"/>
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/right_arrow_icon"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="6dp"/>
+            app:icon="@drawable/profile_settings"
+            app:backgroundTint="#CACACA"
+            app:iconTint="@color/black"
+            app:iconSize="35dp"
+            app:iconPadding="8dp"
+            app:iconGravity="start"
+            app:cornerRadius="30dp"/>
 
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp">
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_edittext"
-            android:paddingEnd="300dp"
-            android:paddingBottom="45dp"
-            tools:ignore="RtlSymmetry" />
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/settings_icon"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="7dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-condensed"
+            android:text = "Settings"
             android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="110dp"/>
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/right_arrow_icon"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="6dp"/>
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_edittext"
-            android:paddingEnd="300dp"
-            android:paddingBottom="45dp"
-            tools:ignore="RtlSymmetry" />
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/invite_icon"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="7dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Invite"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="110dp"/>
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/right_arrow_icon"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="6dp"/>
+            android:gravity="start|center_vertical"
+            app:icon="@drawable/settings_icon"
+            app:backgroundTint="#CACACA"
+            app:iconTint="@color/black"
+            app:iconSize="35dp"
+            app:iconPadding="8dp"
+            app:iconGravity="start"
+            app:cornerRadius="30dp"/>
 
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp">
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_edittext"
-            android:paddingEnd="300dp"
-            android:paddingBottom="45dp"
-            tools:ignore="RtlSymmetry" />
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/logout_icon"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="7dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-condensed"
+            android:text = "Logout"
             android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="110dp"/>
+            android:gravity="start|center_vertical"
+            app:icon="@drawable/logout_icon"
+            app:backgroundTint="#CACACA"
+            app:iconTint="@color/black"
+            app:iconSize="35dp"
+            app:iconPadding="8dp"
+            app:iconGravity="start"
+            app:cornerRadius="30dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="160dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:background="@drawable/borderradius"
+            android:layout_width="335dp"
+            android:layout_height="48dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageButton
+                android:layout_width="116dp"
+                android:layout_height="35dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Button 1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/user" />
+
+            <ImageButton
+                android:layout_width="114dp"
+                android:layout_height="35dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Button 2"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dice" />
+
+            <ImageButton
+                android:layout_width="112dp"
+                android:layout_height="36dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Button 3"
+                android:scaleType="fitCenter"
+                android:src="@drawable/menu" />
+        </LinearLayout>
+
+
     </FrameLayout>
 
 </LinearLayout>
