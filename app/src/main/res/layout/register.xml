@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="24dp"
     android:background="@drawable/bgpoke"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,90 +9,91 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center_horizontal"
-        android:padding="16dp"
+        android:layout_gravity="center"
         android:src="@drawable/pokeball"/>
 
     <TextView
-        android:textColor="#000"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTER"
         android:textSize="40dp"
         android:fontFamily="sans-serif-black"
         android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp"/>
+        android:layout_gravity="center_horizontal"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:padding="10dp"
+        android:orientation="horizontal">
 
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#CACACA"
-            android:layout_marginBottom="15dp"
             android:padding="15dp"
             android:hint="Enter Username" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:padding="10dp"
+        android:orientation="horizontal">
+
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#CACACA"
-            android:layout_marginBottom="15dp"
             android:padding="15dp"
             android:hint="Enter Email"
             android:inputType="textEmailAddress"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:padding="10dp">
+
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#CACACA"
-            android:layout_marginBottom="15dp"
             android:padding="15dp"
             android:hint="Enter Username"
             android:inputType="textPassword"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="24dp">
+        android:padding="10dp">
+
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#CACACA"
-            android:layout_marginBottom="15dp"
             android:padding="15dp"
             android:hint="Enter Password"
             android:inputType="textPassword"/>
+
     </LinearLayout>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTER"
+        android:textColor="#FFFFFF"
         android:layout_gravity="center_horizontal"
-        android:backgroundTint="#FF0000"
-        android:padding="12dp"/>
+        android:backgroundTint="#FF0000"/>
 </LinearLayout>

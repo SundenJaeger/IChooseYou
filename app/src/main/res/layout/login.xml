@@ -3,16 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgpoke"
-    android:orientation="vertical"
-    android:padding="24dp">
-
+    android:orientation="vertical">
 
     <ImageView
-        android:layout_marginTop="70dp"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:padding="16dp"
         android:scaleType="fitXY"
         android:src="@drawable/pokeball" />
 
@@ -20,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginVertical="12dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="sans-serif-black"
         android:text="I Choose You!"
         android:textColor="#D20103"
@@ -30,6 +26,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -42,7 +39,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#CACACA"
-            android:layout_marginBottom="15dp"
             android:padding="15dp"
             android:hint="Enter Username" />
     </LinearLayout>
@@ -50,6 +46,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -64,16 +61,20 @@
             android:background="#CACACA"
             android:padding="15dp"
             android:hint="Enter Password"
-            android:layout_marginBottom="15dp"
             android:inputType="textPassword" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#D20103"
+        android:textColor="#FFFFFF"
         android:text="LOGIN" />
 
     <Button
@@ -81,7 +82,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#939191"
+        android:textColor="#FFFFFF"
         android:text="Register"
         android:id="@+id/button_register" />
+
+    </LinearLayout>
 
 </LinearLayout>
