@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
+import com.android.ichooseyou2.R
 import com.google.android.material.textfield.TextInputEditText
 
 class EditProfileActivity : Activity() {

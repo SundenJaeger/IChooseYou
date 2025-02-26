@@ -13,10 +13,10 @@
         android:theme="@style/Theme.IChooseYou"
         tools:targetApi="31">
         <activity
-            android:name=".EditProfileActivity"
+            android:name="com.android.ichooseyou.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".DevPageActivity"
+            android:name="com.android.ichooseyou.DevPageActivity"
             android:exported="false" />
         <activity
             android:name=".SettingsActivity"
@@ -28,10 +28,10 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LandingPageActivity"
+            android:name="com.android.ichooseyou.LandingPageActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.android.ichooseyou.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

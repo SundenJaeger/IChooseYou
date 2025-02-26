@@ -3,10 +3,7 @@ package com.android.ichooseyou
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.android.ichooseyou2.R
 import com.google.android.material.button.MaterialButton
 
 class DevPageActivity : Activity() {

@@ -7,13 +7,9 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.android.ichooseyou2.R
 import com.google.android.material.button.MaterialButton
-import org.w3c.dom.Text
 
 class ProfileActivity : Activity() {
     private lateinit var profileImage: ImageView
