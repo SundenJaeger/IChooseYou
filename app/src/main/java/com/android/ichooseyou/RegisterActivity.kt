@@ -22,6 +22,7 @@ class RegisterActivity : Activity() {
 
         val registerButton: Button = findViewById(R.id.register_button)
         val registerBackBtn: Button = findViewById(R.id.back_button)
+
         val userNameField: EditText = findViewById(R.id.username)
         val passwordField: EditText = findViewById(R.id.password)
         val emailField: EditText = findViewById(R.id.email)

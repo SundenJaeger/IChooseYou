@@ -26,11 +26,12 @@ class LoginActivity : Activity() {
 
         var receivedUsername: String?
         var receivedPassword: String?
-        val receivedEmail: String? = intent.getStringExtra("email")
+        var receivedEmail: String?
 
         button_login.setOnClickListener {
             receivedUsername = intent.getStringExtra("username")
             receivedPassword = intent.getStringExtra("password")
+            receivedEmail = intent.getStringExtra("email")
 
             Log.d(
                 "LoginActivity",
@@ -48,7 +49,7 @@ class LoginActivity : Activity() {
                     }
                 }
             } else {
-                if (userNameField.text.toString().isEmpty()) {
+                if (userNameField.text.toString().trim().isEmpty()) {
                     sb.append("Username field is empty.\n")
                 } else {
                     if (userNameField.text.toString().trim() != receivedUsername) {
@@ -85,11 +86,13 @@ class LoginActivity : Activity() {
             } else {
                 Toast.makeText(
                     this,
-                    "Welcome ${userNameField.text.toString().trim()}",
+                    "Welcome, ${userNameField.text.toString().trim()}",
                     Toast.LENGTH_SHORT
                 ).show()
 
                 val intent = Intent(this, LandingPageActivity::class.java)
+                intent.putExtra("username", receivedUsername)
+                intent.putExtra("email", receivedEmail)
                 startActivity(intent)
                 finish()
             }

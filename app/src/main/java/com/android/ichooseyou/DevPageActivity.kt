@@ -16,8 +16,13 @@ class DevPageActivity : Activity() {
 
         val devGoBackButton: MaterialButton = findViewById(R.id.go_back_button_dev)
 
+        val receivedName: String? = intent.getStringExtra("username")
+        val receivedEmail: String? = intent.getStringExtra("email")
+
         devGoBackButton.setOnClickListener {
             val intent = Intent(this,SettingsActivity::class.java)
+            intent.putExtra("username", receivedName)
+            intent.putExtra("email", receivedEmail)
             startActivity(intent)
         }
     }

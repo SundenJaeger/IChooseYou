@@ -17,13 +17,20 @@ class SettingsActivity : Activity() {
         val goBackButton: MaterialButton = findViewById(R.id.go_back_button)
         val aboutUsButton: MaterialButton = findViewById(R.id.about_us_button)
 
+        val receivedName: String? = intent.getStringExtra("username")
+        val receivedEmail: String? = intent.getStringExtra("email")
+
         goBackButton.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("username", receivedName)
+            intent.putExtra("email", receivedEmail)
             startActivity(intent)
         }
 
         aboutUsButton.setOnClickListener {
             val intent = Intent(this, DevPageActivity::class.java)
+            intent.putExtra("username", receivedName)
+            intent.putExtra("email", receivedEmail)
             startActivity(intent)
         }
     }
