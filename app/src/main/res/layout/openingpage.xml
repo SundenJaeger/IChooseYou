@@ -6,32 +6,41 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <VideoView
+        android:id="@+id/videoView"
         android:layout_width="match_parent"
         android:layout_height="389dp"
-        app:srcCompat="@drawable/pokeballz"
         android:layout_marginTop="30dp"/>
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LOG IN"
         android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="150dp"
+        android:layout_marginHorizontal="140dp"
+        android:fontFamily="@font/poppins_regular"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="#EE4B2B"/>
+        app:cornerRadius="50dp"
+        android:backgroundTint="#EE4B2B"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="24dp"/>
 
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="REGISTER"
-        android:textColor="#FFFFFF"
-        android:layout_marginRight="140dp"
-        android:layout_marginLeft="140dp"
-        android:backgroundTint="#000000"/>
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginHorizontal="130dp"
+        android:layout_marginBottom="10dp"
+        app:cornerRadius="50dp"
+        android:backgroundTint="#939191"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="24dp"/>
+
+
 
 </LinearLayout>

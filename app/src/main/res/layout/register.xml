@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/bgpoke"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,17 +10,19 @@
         android:layout_height="200dp"
         android:scaleType="fitXY"
         android:layout_gravity="center"
-        android:src="@drawable/pokeball"/>
+        android:src="@drawable/pokeballz1"/>
 
     <TextView
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
-        android:textSize="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
         android:fontFamily="sans-serif-black"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"/>
+
+        android:text="REGISTER"
+        android:textColor="#D20103"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,9 +35,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#CACACA"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/borderradius"
+            android:fontFamily="@font/poppins_regular"
             android:padding="15dp"
             android:hint="Enter Username" />
+
 
     </LinearLayout>
 
@@ -50,10 +56,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#CACACA"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/borderradius"
+            android:fontFamily="@font/poppins_regular"
             android:padding="15dp"
             android:hint="Enter Password"
             android:inputType="textPassword"/>
+
 
     </LinearLayout>
 
@@ -68,28 +78,43 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#CACACA"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/borderradius"
+            android:fontFamily="@font/poppins_regular"
             android:padding="15dp"
             android:hint="Enter Email"
             android:inputType="textEmailAddress"/>
 
+
     </LinearLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        app:cornerRadius="50dp"
+        android:backgroundTint="#D20103"
         android:textColor="#FFFFFF"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#FF0000"/>
+        android:text="REGISTER"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="10dp"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="24dp"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:layout_gravity="center"
+        app:cornerRadius="50dp"
+        android:backgroundTint="#939191"
         android:textColor="#FFFFFF"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#939191"/>
+        android:fontFamily="@font/poppins_regular"
+        android:text="Back"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="24dp"/>
+
 </LinearLayout>
