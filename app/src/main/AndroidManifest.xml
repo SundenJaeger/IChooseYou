@@ -28,13 +28,13 @@
             android:name="com.android.ichooseyou.DevPageActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name="com.android.ichooseyou.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name="com.android.ichooseyou.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.android.ichooseyou.RegisterActivity"
             android:exported="false" />
         <activity
             android:name="com.android.ichooseyou.LandingPageActivity"
