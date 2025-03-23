@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgpoke">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Scrollable Content -->
     <ScrollView
@@ -83,7 +83,7 @@
                     android:layout_height="200dp"
                     android:padding="16dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/pokeball" />
+                    android:src="@drawable/pokeballz1" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -112,29 +112,35 @@
                     android:textStyle="bold" />
 
                 <!-- Class Buttons -->
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#808080"
-                    android:text="Grade 7 - SAMPAGUITA"
+                    android:backgroundTint="#D20103"
+                    android:text="Sample Section"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_regular"
+                    app:cornerRadius="50dp"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="24dp"
+                    android:layout_marginBottom="10dp"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#808080"
-                    android:text="Grade 7 - Malunggay"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:backgroundTint="#FFFFFF"
+                    android:text="+ NEW SECTION"
+                    android:textColor="#D20103"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_regular"
+                    app:cornerRadius="50dp"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="24dp"
+                    android:layout_marginBottom="10dp"
+                    app:strokeColor="#D20103"
+                    app:strokeWidth="2dp"/>
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#808080"
-                    android:text="Grade 8 - Narra"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -46,7 +46,7 @@
             android:background="@drawable/borderradius"
             android:fontFamily="@font/poppins_regular"
             android:padding="15dp"
-            android:hint="Enter Username" />
+            android:hint=" Enter Username" />
     </LinearLayout>
 
     <LinearLayout
@@ -69,7 +69,7 @@
             android:padding="15dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:hint="Enter Password"
+            android:hint=" Enter Password"
             android:fontFamily="@font/poppins_regular"
             android:inputType="textPassword" />
     </LinearLayout>
@@ -100,12 +100,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cornerRadius="50dp"
-            android:backgroundTint="#939191"
-            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#D20103"
             android:fontFamily="@font/poppins_regular"
             android:text="REGISTER"
             android:paddingVertical="12dp"
-            android:paddingHorizontal="24dp"/>
+            android:paddingHorizontal="24dp"
+            app:strokeColor="#D20103"
+            app:strokeWidth="2dp"/>
+
 
 
     </LinearLayout>

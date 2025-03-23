@@ -2,16 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <!-- Background Color -->
-    <solid android:color="#FFFF"/>
-
-    <!-- Border Color & Thickness -->
-    <stroke android:width="2dp" android:color="#000000"/>
-
-    <!-- Rounded Corners -->
-    <corners android:radius="30dp"/>
-
-    <!-- Padding inside the border -->
-    <padding android:left="10dp" android:top="10dp"
-        android:right="10dp" android:bottom="10dp"/>
+    <solid android:color="#FFFFFF"/> <!-- Background color -->
+    <stroke android:width="2dp" android:color="#D20103"/> <!-- Border color -->
+    <corners android:radius="50dp"/> <!-- Adjust for rounded corners -->
+    <padding android:left="10dp" android:right="10dp"/>
 </shape>
