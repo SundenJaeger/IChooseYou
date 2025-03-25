@@ -178,6 +178,7 @@
                 android:src="@drawable/user" />
 
             <ImageButton
+                android:id="@+id/to_random"
                 android:layout_width="114dp"
                 android:layout_height="35dp"
                 android:adjustViewBounds="true"

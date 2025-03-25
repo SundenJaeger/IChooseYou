@@ -1,14 +1,14 @@
 package com.android.ichooseyou
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.VideoView
-import androidx.appcompat.app.AppCompatActivity
 import com.android.ichooseyou2.R
 
-class OpeningPageActivity : AppCompatActivity() {
+class OpeningPageActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.openingpage)

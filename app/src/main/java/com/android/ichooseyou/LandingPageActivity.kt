@@ -15,6 +15,7 @@ class LandingPageActivity : Activity() {
         setContentView(R.layout.activity_landing_page)
 
         val toProfileBtn: ImageButton = findViewById(R.id.to_profile)
+        val toRandomBtn: ImageButton = findViewById(R.id.to_random)
         val landPageName: TextView = findViewById(R.id.land_page_username)
         val welcomeUser: TextView = findViewById(R.id.welcome_user)
 
@@ -26,6 +27,13 @@ class LandingPageActivity : Activity() {
 
         toProfileBtn.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("username", receivedName)
+            intent.putExtra("email", receivedEmail)
+            startActivity(intent)
+        }
+
+        toRandomBtn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("username", receivedName)
             intent.putExtra("email", receivedEmail)
             startActivity(intent)

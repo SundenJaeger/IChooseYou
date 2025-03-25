@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.ichooseyou.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/random_number_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:padding="16dp"
+        android:gravity="center">
+
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/random_number_section"
+            android:layout_above="@id/action_bar"
+            android:layout_margin="8dp"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/action_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="4dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="335dp"
+            android:layout_height="48dp"
+            android:background="@drawable/borderradius"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/to_profile"
+                android:layout_width="116dp"
+                android:layout_height="35dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Button 1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/user" />
+
+            <ImageButton
+                android:layout_width="114dp"
+                android:layout_height="35dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Button 2"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dice" />
+
+            <ImageButton
+                android:id="@+id/to_landing_page"
+                android:layout_width="112dp"
+                android:layout_height="36dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Button 3"
+                android:scaleType="fitCenter"
+                android:src="@drawable/menu" />
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>
