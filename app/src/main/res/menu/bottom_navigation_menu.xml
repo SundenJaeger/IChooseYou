@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/about_us_icon"
+        android:title="Home" />
+    <item
+        android:id="@+id/navigation_randomize"
+        android:icon="@drawable/dice"
+        android:title="Quick Randomize" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/user"
+        android:title="Profile" />
+</menu>

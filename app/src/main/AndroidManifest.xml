@@ -13,40 +13,37 @@
         android:theme="@style/Theme.IChooseYou"
         tools:targetApi="31">
         <activity
+            android:name="com.android.ichooseyou.activity.DevPageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.android.ichooseyou.activity.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.android.ichooseyou.activity.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.android.ichooseyou.activity.LandingPageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.android.ichooseyou.activity.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name="com.android.ichooseyou.RandomizerActivity"
             android:exported="false" />
         <activity
             android:name="com.android.ichooseyou.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.android.ichooseyou.OpeningPageActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.android.ichooseyou.EditProfileActivity"
-            android:exported="false" />
-        <activity
             android:name="com.android.ichooseyou.DevPageActivity"
             android:exported="false" />
         <activity
-            android:name="com.android.ichooseyou.SettingsActivity"
+            android:name="com.android.ichooseyou.backup.SettingsActivity"
             android:exported="false" />
         <activity
             android:name="com.android.ichooseyou.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.android.ichooseyou.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.android.ichooseyou.LandingPageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.android.ichooseyou.LoginActivity"
+            android:name="com.android.ichooseyou.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
