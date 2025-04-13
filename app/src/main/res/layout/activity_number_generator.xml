@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.android.ichooseyou.activity.NumberGeneratorActivity">
+    tools:context=".activity.NumberGeneratorActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:elevation="0dp">
+        android:elevation="4dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Number Generator"
-            app:titleTextColor="#D20103"
-            android:fontFamily="@font/poppins_bold" />
-
+            app:titleTextColor="@color/primary_red"
+            android:background="@color/white"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
@@ -32,80 +31,100 @@
         android:padding="24dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <!-- Pokéball Logo -->
+        <ImageView
+            android:id="@+id/pokeball_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pokeballz1"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/pokeball_logo_desc"/>
+
+        <!-- Input Fields -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="32dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/min_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
-                android:hint="Min number">
+                app:boxStrokeColor="@color/primary_red"
+                app:hintTextColor="@color/primary_red"
+                app:shapeAppearanceOverlay="@style/RoundedShapeAppearanceOverlay">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/min_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:text="1"/>
+                    android:text="1"
+                    android:textColor="@color/text_dark"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/max_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                android:hint="Max number">
+                app:boxStrokeColor="@color/primary_red"
+                app:hintTextColor="@color/primary_red"
+                app:shapeAppearanceOverlay="@style/RoundedShapeAppearanceOverlay">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/max_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:text="100"/>
+                    android:text="100"
+                    android:textColor="@color/text_dark"/>
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/result_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="48sp"
-            android:textColor="#D20103"
-            android:fontFamily="@font/poppins_bold"
-            android:text="?"
-            android:layout_marginBottom="32dp"/>
+        <!-- Result Display -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginBottom="32dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="80dp"
+            app:strokeColor="@color/primary_red"
+            app:strokeWidth="2dp"
+            app:cardElevation="4dp">
 
+            <TextView
+                android:id="@+id/result_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="42sp"
+                android:textColor="@color/primary_red"
+                android:text="?"
+                android:gravity="center"
+                android:textStyle="bold"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Generate Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/generate_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Generate Number"
+            android:text="GENERATE"
             android:textColor="@color/white"
-            android:fontFamily="@font/poppins_regular"
-            app:backgroundTint="#D20103"
+            app:backgroundTint="@color/primary_red"
             app:cornerRadius="28dp"
-            android:padding="16dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             android:layout_marginBottom="24dp"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go Back"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppins_regular"
-            app:backgroundTint="#D20103"
-            app:cornerRadius="28dp"
-            android:padding="16dp"
-            android:onClick="onBackPressed"/>
 
     </LinearLayout>
 
