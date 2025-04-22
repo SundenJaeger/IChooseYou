@@ -10,7 +10,8 @@
     <color name="white">#FFFFFF</color>
     <color name="primary_red">#D20103</color>
     <color name="primary_red_dark">#A00000</color>
-    <color name="text_dark">#212121</color>
     <color name="rolling_text_color">#FF9800</color>
     <color name="result_text_color">#333333</color>
+    <color name="selected_team_color">#D20103</color>
+    <color name="text_dark">#333333</color>
 </resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    tools:context="com.android.ichooseyou.activity.TeamPickerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚡ Team Picker"
+                android:textSize="28sp"
+                android:textColor="#333333"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:letterSpacing="0.02"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create perfectly balanced teams"
+                android:textSize="16sp"
+                android:textColor="#666666"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Input Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#20000000"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Team Count Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:hintTextColor="#80000000"
+                    app:boxStrokeColor="#80000000">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/team_count_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Number of teams (2-6)"
+                        android:inputType="number"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_regular"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Participants Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:hintTextColor="#80000000"
+                    app:boxStrokeColor="#80000000">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/participants_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:hint="Participants (one per line)"
+                        android:inputType="textMultiLine"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="top"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Generate Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/generate_teams_button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="GENERATE TEAMS"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_bold"
+            app:icon="@drawable/ic_shuffle"
+            app:iconTint="@android:color/white"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:backgroundTint="#D20103"
+            app:cornerRadius="28dp"
+            android:layout_marginBottom="24dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <!-- Results Section -->
+        <TextView
+            android:id="@+id/results_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="YOUR TEAMS"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:fontFamily="@font/poppins_bold"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"
+            android:letterSpacing="0.05"/>
+
+        <LinearLayout
+            android:id="@+id/teams_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="@drawable/divider_grey"
+            android:showDividers="middle"/>
+    </LinearLayout>
+</ScrollView>

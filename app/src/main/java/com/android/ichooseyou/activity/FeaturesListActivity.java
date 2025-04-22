@@ -47,10 +47,10 @@ public class FeaturesListActivity extends AppCompatActivity {
         });
 
 
-//        MaterialButton teamPickerButton = findViewById(R.id.team_picker_button);
-//        teamPickerButton.setOnClickListener(v -> {
-//            startActivity(new Intent(FeaturesListActivity.this, TeamPickerActivity.class));
-//        });
+        MaterialButton teamPickerButton = findViewById(R.id.team_picker_button);
+        teamPickerButton.setOnClickListener(v -> {
+            startActivity(new Intent(FeaturesListActivity.this, TeamPickerActivity.class));
+        });
 //
 //        MaterialButton colorPickerButton = findViewById(R.id.color_picker_button);
 //        colorPickerButton.setOnClickListener(v -> {
@@ -67,7 +67,6 @@ public class FeaturesListActivity extends AppCompatActivity {
 //            startActivity(new Intent(FeaturesListActivity.this, LotteryActivity.class));
 //        });
 
-        // Added Wheel of Names button
         MaterialButton wheelOfNamesButton = findViewById(R.id.wheel_of_names_button);
         wheelOfNamesButton.setOnClickListener(v -> {
             startActivity(new Intent(FeaturesListActivity.this, WheelOfNamesActivity.class));
