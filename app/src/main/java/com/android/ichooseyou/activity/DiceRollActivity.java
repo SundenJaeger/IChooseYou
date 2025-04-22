@@ -1,7 +1,6 @@
 package com.android.ichooseyou.activity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -45,20 +44,41 @@ public class DiceRollActivity extends AppCompatActivity {
     private void rollDice() {
         isRolling = true;
         resultText.setText("Rolling...");
+        resultText.setTextColor(getResources().getColor(R.color.rolling_text_color));
 
-        // Load shake animation
         Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+        Animation fadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
+        fadeIn.setDuration(300);
 
         shake.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationStart(Animation animation) {}
+            public void onAnimationStart(Animation animation) {
+                final Runnable changeDice = new Runnable() {
+                    @Override
+                    public void run() {
+                        if (isRolling) {
+                            int tempRoll = random.nextInt(6);
+                            diceImage.setImageResource(diceFaces[tempRoll]);
+                            diceImage.postDelayed(this, 100);
+                        }
+                    }
+                };
+                diceImage.post(changeDice);
+            }
 
             @Override
             public void onAnimationEnd(Animation animation) {
                 isRolling = false;
-                int roll = random.nextInt(6); // 0-5
+                int roll = random.nextInt(6);
                 diceImage.setImageResource(diceFaces[roll]);
+                diceImage.startAnimation(fadeIn);
                 resultText.setText(String.format("You rolled: %d", roll + 1));
+                resultText.setTextColor(getResources().getColor(R.color.result_text_color));
+
+                if (roll == 5) {
+                    Animation celebrate = AnimationUtils.loadAnimation(DiceRollActivity.this, R.anim.bounce);
+                    diceImage.startAnimation(celebrate);
+                }
             }
 
             @Override

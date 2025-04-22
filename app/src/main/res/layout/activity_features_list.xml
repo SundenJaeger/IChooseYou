@@ -98,7 +98,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:textColor="#212121"
                         android:textSize="16sp"
-                        app:icon="@drawable/ic_dice"
+                        app:icon="@drawable/ic_dicez"
                         app:iconGravity="textStart"
                         app:iconPadding="16dp"
                         app:iconSize="24dp"

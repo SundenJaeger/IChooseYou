@@ -29,15 +29,24 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="24dp"
+        android:padding="32dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <ImageView
-            android:id="@+id/dice_image"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/dice_1"
-            android:layout_marginBottom="24dp"/>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dice_shadow_light"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/dice_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/dice_1"
+                android:elevation="8dp"
+                android:contentDescription="@string/dice_image_desc"/>
+
+        </FrameLayout>
 
         <TextView
             android:id="@+id/result_text"
@@ -45,31 +54,52 @@
             android:layout_height="wrap_content"
             android:text="Tap roll to begin"
             android:textSize="24sp"
+            android:textColor="#333333"
             android:fontFamily="@font/poppins_regular"
+            android:layout_marginTop="32dp"
             android:layout_marginBottom="48dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/roll_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Roll Dice"
+            android:text="ROLL DICE"
+            android:textAllCaps="true"
             android:textColor="@color/white"
-            android:fontFamily="@font/poppins_regular"
+            android:fontFamily="@font/poppins_bold"
             app:backgroundTint="#D20103"
             app:cornerRadius="28dp"
+            app:icon="@drawable/ic_dicez"
+            app:iconTint="@color/white"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
             android:layout_marginBottom="24dp"
-            android:padding="16dp"/>
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:elevation="4dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go Back"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppins_regular"
-            app:backgroundTint="#D20103"
+            android:text="GO BACK"
+            android:textAllCaps="true"
+            android:textColor="#D20103"
+            android:fontFamily="@font/poppins_bold"
+            app:strokeColor="#D20103"
+            app:strokeWidth="2dp"
             app:cornerRadius="28dp"
-            android:padding="16dp"/>
+            app:icon="@drawable/ic_arrow_back"
+            app:iconTint="#D20103"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            android:backgroundTint="@android:color/transparent"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"/>
 
     </LinearLayout>
 

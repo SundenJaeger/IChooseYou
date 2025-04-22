@@ -3,4 +3,5 @@
     <string name="pokeball_logo_desc">Pokéball Logo</string>
     <string name="welcome_message">Welcome, %1$s!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dice_image_desc">Dice image showing current roll</string>
 </resources>
