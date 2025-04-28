@@ -1,66 +1,81 @@
 package com.android.ichooseyou.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.ichooseyou2.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link QuickRandomizeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.android.ichooseyou.activity.CoinTossActivity;
+import com.android.ichooseyou.activity.DiceRollActivity;
+import com.android.ichooseyou.activity.ListPickerActivity;
+import com.android.ichooseyou.activity.NumberGeneratorActivity;
+import com.android.ichooseyou.activity.TeamPickerActivity;
+import com.android.ichooseyou.activity.WheelOfNamesActivity;
+import com.android.ichooseyou.model.User;
+import com.android.ichooseyou2.R;
+import com.google.android.material.button.MaterialButton;
+
 public class QuickRandomizeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private User user;
 
     public QuickRandomizeFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment QuickRandomizeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static QuickRandomizeFragment newInstance(String param1, String param2) {
-        QuickRandomizeFragment fragment = new QuickRandomizeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            user = getArguments().getParcelable("USER_DATA");
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quick_randomize, container, false);
+        // Inflate the layout for this fragment - use the same layout as FeatureListActivity
+        return inflater.inflate(R.layout.activity_features_list, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Initialize all buttons and set click listeners - same as in FeatureListActivity
+        MaterialButton coinTossButton = view.findViewById(R.id.coin_toss_button);
+        coinTossButton.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), CoinTossActivity.class));
+        });
+
+        MaterialButton diceRollButton = view.findViewById(R.id.dice_roll_button);
+        diceRollButton.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), DiceRollActivity.class));
+        });
+
+        MaterialButton numberGeneratorButton = view.findViewById(R.id.number_generator_button);
+        numberGeneratorButton.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), NumberGeneratorActivity.class));
+        });
+
+        MaterialButton listPickerButton = view.findViewById(R.id.list_picker_button);
+        listPickerButton.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), ListPickerActivity.class));
+        });
+
+        MaterialButton teamPickerButton = view.findViewById(R.id.team_picker_button);
+        teamPickerButton.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), TeamPickerActivity.class));
+        });
+
+        MaterialButton wheelOfNamesButton = view.findViewById(R.id.wheel_of_names_button);
+        wheelOfNamesButton.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), WheelOfNamesActivity.class));
+        });
     }
 }

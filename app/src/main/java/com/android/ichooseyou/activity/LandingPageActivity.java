@@ -54,11 +54,7 @@ public class LandingPageActivity extends AppCompatActivity {
                 if (itemId == R.id.navigation_home) {
                     selectedFragment = new HomeFragment();
                 } else if (itemId == R.id.navigation_randomize) {
-                    // Replace QuickRandomizeFragment with FeaturesListActivity launch
-                    Intent intent = new Intent(LandingPageActivity.this, FeaturesListActivity.class);
-                    intent.putExtra("USER_DATA", user);
-                    startActivity(intent);
-                    return true; // Return true to indicate the event was handled
+                    selectedFragment = new QuickRandomizeFragment();
                 } else if (itemId == R.id.navigation_profile) {
                     selectedFragment = new ProfileFragment();
                 }
