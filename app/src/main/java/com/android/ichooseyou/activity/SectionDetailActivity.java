@@ -15,8 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.android.ichooseyou2.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,6 +28,7 @@ public class SectionDetailActivity extends AppCompatActivity {
     private TextView sectionTitleTextView;
     private ListView itemsListView;
     private Button editButton, removeButton, randomizeButton;
+    private FloatingActionButton fabAddItem;
 
     private String sectionName;
     private ArrayList<String> items = new ArrayList<>();
@@ -48,11 +51,19 @@ public class SectionDetailActivity extends AppCompatActivity {
         editButton = findViewById(R.id.edit_button);
         removeButton = findViewById(R.id.remove_button);
         randomizeButton = findViewById(R.id.randomize_button);
+        fabAddItem = findViewById(R.id.fab_add_item);
+
+        // Set up toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         // Set section title
         sectionTitleTextView.setText(sectionName);
 
-        // Set up adapter for list view
+        // Set up adapter for list view with custom item layout
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         itemsListView.setAdapter(adapter);
 
@@ -60,12 +71,45 @@ public class SectionDetailActivity extends AppCompatActivity {
         editButton.setOnClickListener(v -> showEditDialog());
         removeButton.setOnClickListener(v -> showRemoveConfirmationDialog());
         randomizeButton.setOnClickListener(v -> showRandomizeOptions());
+        fabAddItem.setOnClickListener(v -> showAddItemDialog());
 
         // Set item click listener for list view
         itemsListView.setOnItemLongClickListener((parent, view, position, id) -> {
             showItemOptionsDialog(position);
             return true;
         });
+    }
+
+    private void showAddItemDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Add New Item");
+
+        // Set up the input field
+        final EditText input = new EditText(this);
+        input.setHint("Enter item name");
+
+        // Add padding to the input field
+        LinearLayout container = new LinearLayout(this);
+        container.setOrientation(LinearLayout.VERTICAL);
+        int padding = (int) (16 * getResources().getDisplayMetrics().density);
+        container.setPadding(padding, padding, padding, padding);
+        container.addView(input);
+
+        builder.setView(container);
+
+        // Set up the buttons
+        builder.setPositiveButton("Add", (dialog, which) -> {
+            String itemText = input.getText().toString().trim();
+            if (!TextUtils.isEmpty(itemText)) {
+                items.add(itemText);
+                adapter.notifyDataSetChanged();
+                Toast.makeText(this, "Item added", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
+
+        builder.show();
     }
 
     private void showEditDialog() {
