@@ -169,55 +169,16 @@
                     app:cardElevation="2dp">
 
                     <LinearLayout
+                        android:id="@+id/sections_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="16dp">
 
                         <!-- Sample Section Card -->
-                        <com.google.android.material.card.MaterialCardView
+                        <include
                             android:id="@+id/section_card"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:clickable="true"
-                            android:focusable="true"
-                            app:cardBackgroundColor="#D20103"
-                            app:cardCornerRadius="12dp"
-                            app:cardElevation="2dp"
-                            app:rippleColor="#50FFFFFF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:padding="16dp">
-
-                                <ImageView
-                                    android:layout_width="32dp"
-                                    android:layout_height="32dp"
-                                    android:layout_gravity="center_vertical"
-                                    android:src="@drawable/pokeballz1"
-                                    app:tint="#FFFFFF" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginStart="16dp"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/poppins_regular"
-                                    android:text="Sample Section"
-                                    android:textColor="#FFFFFF"
-                                    android:textSize="16sp" />
-
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:layout_gravity="center_vertical"
-                                    app:tint="#FFFFFF" />
-                            </LinearLayout>
-                        </com.google.android.material.card.MaterialCardView>
+                            layout="@layout/item_section" />
 
                         <!-- Add New Section Button -->
                         <com.google.android.material.button.MaterialButton
@@ -249,7 +210,8 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="76dp"
             android:backgroundTint="#D20103"
-            android:contentDescription="Add new content"
+            android:contentDescription="Add new section"
+            android:src="@drawable/ic_add"
             app:borderWidth="0dp"
             app:elevation="6dp"
             app:tint="#FFFFFF" />
