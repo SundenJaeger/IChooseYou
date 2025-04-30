@@ -21,6 +21,7 @@ public class TeamPickerActivity extends AppCompatActivity {
     private Button generateTeamsButton;
     private LinearLayout teamsContainer;
     private TextView resultsTitle;
+    private ArrayList<String> itemsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,18 @@ public class TeamPickerActivity extends AppCompatActivity {
         generateTeamsButton = findViewById(R.id.generate_teams_button);
         teamsContainer = findViewById(R.id.teams_container);
         resultsTitle = findViewById(R.id.results_title);
+
+        // Get the items list from the intent
+        itemsList = getIntent().getStringArrayListExtra("ITEMS");
+
+        // If items were passed, populate the participants field
+        if (itemsList != null && !itemsList.isEmpty()) {
+            StringBuilder sb = new StringBuilder();
+            for (String item : itemsList) {
+                sb.append(item).append("\n");
+            }
+            participantsInput.setText(sb.toString().trim());
+        }
 
         generateTeamsButton.setOnClickListener(v -> generateBalancedTeams());
     }
