@@ -13,16 +13,13 @@
         android:theme="@style/Theme.IChooseYou"
         tools:targetApi="31">
         <activity
+            android:name="com.android.ichooseyou.activity.SectionDetailActivity"
+            android:exported="false" />
+        <activity
             android:name="com.android.ichooseyou.activity.TeamPickerActivity"
             android:exported="false" />
         <activity
             android:name="com.android.ichooseyou.activity.WheelOfNamesActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.android.ichooseyou.activity.WheelOfNames"
-            android:exported="false" />
-        <activity
-            android:name="com.android.ichooseyou.activity.PollActivity"
             android:exported="false" />
         <activity
             android:name="com.android.ichooseyou.activity.ListPickerActivity"
@@ -53,21 +50,6 @@
             android:exported="false" />
         <activity
             android:name="com.android.ichooseyou.activity.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.android.ichooseyou.RandomizerActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.android.ichooseyou.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.android.ichooseyou.DevPageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.android.ichooseyou.backup.SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.android.ichooseyou.ProfileActivity"
             android:exported="false" />
         <activity
             android:name="com.android.ichooseyou.activity.LoginActivity"

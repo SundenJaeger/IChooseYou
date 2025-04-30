@@ -3,16 +3,21 @@ package com.android.ichooseyou.activity;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.ichooseyou2.R;
+
 import java.util.Random;
 
 public class DiceRollActivity extends AppCompatActivity {
 
     private ImageView diceImage;
     private TextView resultText;
+    private Button backButton;
     private Random random = new Random();
     private boolean isRolling = false;
     private int[] diceFaces = {
@@ -31,6 +36,7 @@ public class DiceRollActivity extends AppCompatActivity {
 
         diceImage = findViewById(R.id.dice_image);
         resultText = findViewById(R.id.result_text);
+        backButton = findViewById(R.id.dice_roll_back_button);
 
         findViewById(R.id.roll_button).setOnClickListener(v -> {
             if (!isRolling) {
@@ -38,7 +44,7 @@ public class DiceRollActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.back_button).setOnClickListener(v -> finish());
+        backButton.setOnClickListener(v -> finish());
     }
 
     private void rollDice() {
@@ -82,7 +88,8 @@ public class DiceRollActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationRepeat(Animation animation) {
+            }
         });
 
         diceImage.startAnimation(shake);

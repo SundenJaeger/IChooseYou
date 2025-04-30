@@ -8,15 +8,18 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.ichooseyou2.R;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class ListPickerActivity extends AppCompatActivity {
 
     private EditText itemInput;
-    private Button addButton, pickButton;
+    private Button addButton, pickButton, backButton;
     private ListView itemsListView;
     private TextView resultText;
     private ArrayList<String> items = new ArrayList<>();
@@ -34,6 +37,13 @@ public class ListPickerActivity extends AppCompatActivity {
         pickButton = findViewById(R.id.pick_button);
         itemsListView = findViewById(R.id.items_list);
         resultText = findViewById(R.id.result_text);
+        backButton = findViewById(R.id.list_picker_back_button);
+
+        // Check if items were passed from SectionDetailActivity
+        ArrayList<String> passedItems = getIntent().getStringArrayListExtra("ITEMS");
+        if (passedItems != null && !passedItems.isEmpty()) {
+            items.addAll(passedItems);
+        }
 
         // Set up list adapter
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
@@ -42,6 +52,7 @@ public class ListPickerActivity extends AppCompatActivity {
         // Set click listeners
         addButton.setOnClickListener(v -> addItem());
         pickButton.setOnClickListener(v -> pickRandomItem());
+        backButton.setOnClickListener(v -> finish());
 
         // Set long click listener for item removal
         itemsListView.setOnItemLongClickListener((parent, view, position, id) -> {

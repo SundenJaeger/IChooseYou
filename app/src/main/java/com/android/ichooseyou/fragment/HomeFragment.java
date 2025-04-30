@@ -1,6 +1,7 @@
 package com.android.ichooseyou.fragment;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.android.ichooseyou.model.User;
 import com.android.ichooseyou2.R;
+import com.android.ichooseyou.activity.SectionDetailActivity;
 
 public class HomeFragment extends Fragment {
     private TextView landPageUsername, welcomeUser;
@@ -52,7 +54,8 @@ public class HomeFragment extends Fragment {
         TextView sampleSectionName = sampleSectionView.findViewById(R.id.section_name);
 
         sampleSectionCard.setOnClickListener(v -> {
-            Toast.makeText(requireContext(), "Sample Section clicked", Toast.LENGTH_SHORT).show();
+            // Launch the SectionDetailActivity instead of showing a Toast
+            navigateToSection(sampleSectionName.getText().toString());
         });
 
         // Set up long-press listener for the sample section
@@ -130,12 +133,8 @@ public class HomeFragment extends Fragment {
         // Set click listener for the section card
         MaterialCardView sectionCard = sectionView.findViewById(R.id.section_card);
         sectionCard.setOnClickListener(v -> {
-            // Handle section click
-            Toast.makeText(requireContext(), "Section " + sectionName + " clicked", Toast.LENGTH_SHORT).show();
-
-            // Here you would typically navigate to the section's content
-            // For example:
-            // navigateToSection(sectionName);
+            // Navigate to the section's detail activity
+            navigateToSection(sectionName);
         });
 
         // Set long-click listener for the section card
@@ -174,11 +173,12 @@ public class HomeFragment extends Fragment {
     }
 
     /**
-     * Example method to navigate to a section's content
-     * Not implemented in this example
+     * Navigate to the section detail activity
+     * @param sectionName The name of the section to navigate to
      */
     private void navigateToSection(String sectionName) {
-        // Implementation would depend on your app's navigation requirements
-        // For example, you might create a new fragment and pass the section name
+        Intent intent = new Intent(requireContext(), SectionDetailActivity.class);
+        intent.putExtra("SECTION_NAME", sectionName);
+        startActivity(intent);
     }
 }

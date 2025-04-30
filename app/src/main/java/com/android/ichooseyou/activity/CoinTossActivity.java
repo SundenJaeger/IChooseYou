@@ -4,16 +4,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.ichooseyou2.R;
+
 import java.util.Random;
 
 public class CoinTossActivity extends AppCompatActivity {
 
     private ImageView coinImage;
     private TextView resultText;
+    private Button backButton;
     private Random random = new Random();
     private boolean isTossing = false;
     private int lastSide = -1; // -1 = none, 0 = heads, 1 = tails
@@ -25,6 +30,7 @@ public class CoinTossActivity extends AppCompatActivity {
 
         coinImage = findViewById(R.id.coin_image);
         resultText = findViewById(R.id.result_text);
+        backButton = findViewById(R.id.coin_toss_back_button);
 
         findViewById(R.id.toss_button).setOnClickListener(v -> {
             if (!isTossing) {
@@ -32,7 +38,7 @@ public class CoinTossActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.back_button).setOnClickListener(v -> finish());
+        backButton.setOnClickListener(v -> finish());
     }
 
     private void tossCoin() {
@@ -51,7 +57,8 @@ public class CoinTossActivity extends AppCompatActivity {
 
         rotate.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationStart(Animation animation) {}
+            public void onAnimationStart(Animation animation) {
+            }
 
             @Override
             public void onAnimationEnd(Animation animation) {
@@ -67,7 +74,8 @@ public class CoinTossActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationRepeat(Animation animation) {
+            }
         });
 
         coinImage.startAnimation(rotate);

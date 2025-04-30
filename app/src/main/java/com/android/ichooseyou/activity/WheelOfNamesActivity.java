@@ -11,16 +11,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.ichooseyou2.R;
 import com.android.ichooseyou.model.WheelView;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class WheelOfNamesActivity extends AppCompatActivity {
 
     private EditText nameInput;
-    private Button addNameButton, spinButton;
+    private Button addNameButton, spinButton, backButton;
     private WheelView wheelView;
     private ArrayList<String> names = new ArrayList<>();
     private Random random = new Random();
@@ -36,9 +39,18 @@ public class WheelOfNamesActivity extends AppCompatActivity {
         addNameButton = findViewById(R.id.add_name_button);
         spinButton = findViewById(R.id.spin_button);
         wheelView = findViewById(R.id.wheel_view);
+        backButton = findViewById(R.id.wheel_of_names_back_button);
+
+        // Check if items were passed from SectionDetailActivity
+        ArrayList<String> passedItems = getIntent().getStringArrayListExtra("ITEMS");
+        if (passedItems != null && !passedItems.isEmpty()) {
+            names.addAll(passedItems);
+            wheelView.setItems(names);
+        }
 
         addNameButton.setOnClickListener(v -> addName());
         spinButton.setOnClickListener(v -> spinWheel());
+        backButton.setOnClickListener(e -> finish());
     }
 
     private void addName() {
@@ -65,7 +77,7 @@ public class WheelOfNamesActivity extends AppCompatActivity {
 
         // Calculate angle needed to position selected segment at arrow (top center)
         float anglePerSegment = 360f / names.size();
-        float segmentCenterAngle = selectedIndex * anglePerSegment + anglePerSegment/2;
+        float segmentCenterAngle = selectedIndex * anglePerSegment + anglePerSegment / 2;
         float arrowPositionAngle = 270f; // Arrow points to top (270° in mathematical coordinates)
         float rotations = 7f; // Number of full rotations
 
@@ -96,9 +108,17 @@ public class WheelOfNamesActivity extends AppCompatActivity {
         });
 
         wheelAnimator.addListener(new android.animation.Animator.AnimatorListener() {
-            @Override public void onAnimationStart(android.animation.Animator animation) {}
-            @Override public void onAnimationCancel(android.animation.Animator animation) {}
-            @Override public void onAnimationRepeat(android.animation.Animator animation) {}
+            @Override
+            public void onAnimationStart(android.animation.Animator animation) {
+            }
+
+            @Override
+            public void onAnimationCancel(android.animation.Animator animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(android.animation.Animator animation) {
+            }
 
             @Override
             public void onAnimationEnd(android.animation.Animator animation) {
