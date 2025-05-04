@@ -2,4 +2,5 @@
 <resources>
 
     <style name="Theme.IChooseYou" parent="Theme.MaterialComponents.Light.NoActionBar" />
+
 </resources>

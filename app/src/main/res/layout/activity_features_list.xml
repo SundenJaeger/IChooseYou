@@ -288,6 +288,23 @@
                         android:layout_marginHorizontal="16dp"
                         android:background="#EEEEEE" />
 
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/lottery_button"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:gravity="start|center_vertical"
+                        android:paddingStart="16dp"
+                        android:text="Lottery Numbers"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="#212121"
+                        android:textSize="16sp"
+                        app:icon="@drawable/ic_lottery"
+                        app:iconGravity="textStart"
+                        app:iconPadding="16dp"
+                        app:iconSize="24dp"
+                        app:iconTint="#D20103" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

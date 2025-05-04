@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.android.ichooseyou.activity.LotteryActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Lottery Numbers"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:titleTextColor="#D20103"
+            android:fontFamily="@font/poppins_bold" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/result_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#D20103"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Your Lucky Numbers"
+                        android:textColor="#D20103"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/numbers_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:clipToPadding="false"
+                        android:padding="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/generate_button"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Generate"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/poppins_bold"
+                    app:backgroundTint="#D20103"
+                    app:cornerRadius="12dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/save_button"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="#D20103"
+                    android:fontFamily="@font/poppins_regular"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="#D20103"
+                    app:strokeWidth="1dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear_button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="24dp"
+                android:text="Clear"
+                android:textAllCaps="false"
+                android:textColor="#D20103"
+                android:fontFamily="@font/poppins_regular"
+                app:cornerRadius="12dp"
+                app:strokeColor="#D20103"
+                app:strokeWidth="1dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -6,37 +6,43 @@ import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.ichooseyou2.R;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textview.MaterialTextView;
+
 import java.util.Random;
 
 public class NumberGeneratorActivity extends AppCompatActivity {
 
-    private EditText minInput, maxInput;
-    private TextView resultText;
-    private Button generateButton;
-    private ImageView pokeballLogo;
-    private Random random = new Random();
+    private TextInputEditText minInput, maxInput;
+    private MaterialTextView resultText;
+    private MaterialButton generateButton;
+    private MaterialCardView resultCard;
     private ValueAnimator animator;
+    private Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_generator);
 
+        // Initialize views
         minInput = findViewById(R.id.min_input);
         maxInput = findViewById(R.id.max_input);
         resultText = findViewById(R.id.result_text);
+        resultCard = findViewById(R.id.result_card);
         generateButton = findViewById(R.id.generate_button);
-        pokeballLogo = findViewById(R.id.pokeball_logo);
 
+        // Set click listeners
         generateButton.setOnClickListener(v -> generateRandomNumber());
-        pokeballLogo.setOnClickListener(v -> spinPokeball());
     }
 
     private void generateRandomNumber() {
@@ -49,7 +55,13 @@ public class NumberGeneratorActivity extends AppCompatActivity {
                 return;
             }
 
+            if (min < 0 || max < 0) {
+                Toast.makeText(this, "Please enter positive numbers", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             generateButton.setEnabled(false);
+            resultCard.setVisibility(View.VISIBLE);
             animateRandomNumber(min, max);
 
         } catch (NumberFormatException e) {
@@ -58,13 +70,16 @@ public class NumberGeneratorActivity extends AppCompatActivity {
     }
 
     private void animateRandomNumber(int min, int max) {
-        if (animator != null) {
+        if (animator != null && animator.isRunning()) {
             animator.cancel();
         }
 
+        // Create animation that cycles through numbers
         animator = ValueAnimator.ofInt(min, max);
-        animator.setDuration(2000);
+        animator.setDuration(700);
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        animator.setRepeatCount(3);
+        animator.setRepeatMode(ValueAnimator.REVERSE);
 
         animator.addUpdateListener(animation -> {
             int value = (int) animation.getAnimatedValue();
@@ -77,32 +92,33 @@ public class NumberGeneratorActivity extends AppCompatActivity {
                 int randomNumber = random.nextInt((max - min) + 1) + min;
                 resultText.setText(String.valueOf(randomNumber));
                 generateButton.setEnabled(true);
-                celebrateResult();
+                celebrateResult(randomNumber);
             }
         });
 
         animator.start();
     }
 
-    private void spinPokeball() {
-        pokeballLogo.animate()
-                .rotationBy(360)
-                .setDuration(800)
-                .setInterpolator(new AccelerateDecelerateInterpolator())
-                .start();
+    private void celebrateResult(int number) {
+        Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
+        resultCard.startAnimation(pulse);
+
+        if (isSpecialNumber(number)) {
+            Toast.makeText(this, "Special Number!", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    private void celebrateResult() {
-        resultText.animate()
-                .scaleX(1.3f)
-                .scaleY(1.3f)
-                .setDuration(300)
-                .withEndAction(() -> resultText.animate()
-                        .scaleX(1f)
-                        .scaleY(1f)
-                        .setDuration(300)
-                        .start())
-                .start();
+    private boolean isSpecialNumber(int number) {
+        // Check for prime numbers
+        if (number <= 1) return false;
+        if (number <= 3) return true;
+        if (number % 2 == 0 || number % 3 == 0) return false;
+        for (int i = 5; i * i <= number; i += 6) {
+            if (number % i == 0 || number % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override

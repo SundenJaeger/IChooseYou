@@ -51,21 +51,21 @@ public class FeaturesListActivity extends AppCompatActivity {
         teamPickerButton.setOnClickListener(v -> {
             startActivity(new Intent(FeaturesListActivity.this, TeamPickerActivity.class));
         });
-//
-//        MaterialButton colorPickerButton = findViewById(R.id.color_picker_button);
-//        colorPickerButton.setOnClickListener(v -> {
-//            startActivity(new Intent(FeaturesListActivity.this, ColorPickerActivity.class));
-//        });
-//
-//        MaterialButton decisionMakerButton = findViewById(R.id.decision_maker_button);
-//        decisionMakerButton.setOnClickListener(v -> {
-//            startActivity(new Intent(FeaturesListActivity.this, DecisionMakerActivity.class));
-//        });
-//
-//        MaterialButton lotteryButton = findViewById(R.id.lottery_button);
-//        lotteryButton.setOnClickListener(v -> {
-//            startActivity(new Intent(FeaturesListActivity.this, LotteryActivity.class));
-//        });
+
+        MaterialButton colorPickerButton = findViewById(R.id.color_picker_button);
+        colorPickerButton.setOnClickListener(v -> {
+            startActivity(new Intent(FeaturesListActivity.this, ColorPickerActivity.class));
+        });
+
+        MaterialButton decisionMakerButton = findViewById(R.id.decision_maker_button);
+        decisionMakerButton.setOnClickListener(v -> {
+            startActivity(new Intent(FeaturesListActivity.this, DecisionMakerActivity.class));
+        });
+
+        MaterialButton lotteryButton = findViewById(R.id.lottery_button);
+        lotteryButton.setOnClickListener(v -> {
+            startActivity(new Intent(FeaturesListActivity.this, LotteryActivity.class));
+        });
 
         MaterialButton wheelOfNamesButton = findViewById(R.id.wheel_of_names_button);
         wheelOfNamesButton.setOnClickListener(v -> {

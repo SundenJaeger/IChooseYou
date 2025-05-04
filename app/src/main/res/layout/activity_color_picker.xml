@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.android.ichooseyou.activity.CoinTossActivity">
+    tools:context="com.android.ichooseyou.activity.ColorPickerActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -19,7 +19,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Coin Toss"
+            app:title="Color Picker"
             app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             app:titleTextColor="#D20103"
             android:fontFamily="@font/poppins_bold" />
@@ -36,11 +36,11 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
+            android:layout_marginTop="70dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="16dp"
-            android:gravity="center_horizontal">
+            android:paddingHorizontal="16dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -51,7 +51,6 @@
                 app:cardElevation="2dp">
 
                 <LinearLayout
-                    android:layout_marginTop="45dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -59,58 +58,87 @@
                     android:gravity="center_horizontal">
 
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="200dp"
+                        android:id="@+id/color_card"
+                        android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        app:cardCornerRadius="100dp"
+                        app:cardCornerRadius="12dp"
                         app:cardElevation="4dp"
                         app:strokeColor="#D20103"
                         app:strokeWidth="2dp">
 
-                        <ImageView
-                            android:id="@+id/coin_image"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/ic_coin_heads"
-                            android:contentDescription="Coin image" />
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/hex_code_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="24sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:text="Tap Generate"/>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/rgb_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="RGB values"/>
+                        </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/result_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:text="Tap toss to begin"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textColor="#D20103" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/toss_button"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="#D20103"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Toss Coin"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                app:cornerRadius="12dp" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/generate_button"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#D20103"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Generate"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="12dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/save_button"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="#D20103"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="12dp"/>
+            </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/coin_toss_back_button"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:id="@+id/copy_button"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Go Back"
+                android:text="Copy Color Code"
                 android:textAllCaps="false"
                 android:textColor="#D20103"
                 app:cornerRadius="12dp"
                 app:strokeColor="#D20103"
-                app:strokeWidth="1dp" />
+                app:strokeWidth="1dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

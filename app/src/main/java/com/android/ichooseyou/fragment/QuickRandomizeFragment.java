@@ -11,8 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.android.ichooseyou.activity.CoinTossActivity;
+import com.android.ichooseyou.activity.ColorPickerActivity;
+import com.android.ichooseyou.activity.DecisionMakerActivity;
 import com.android.ichooseyou.activity.DiceRollActivity;
+import com.android.ichooseyou.activity.FeaturesListActivity;
 import com.android.ichooseyou.activity.ListPickerActivity;
+import com.android.ichooseyou.activity.LotteryActivity;
 import com.android.ichooseyou.activity.NumberGeneratorActivity;
 import com.android.ichooseyou.activity.TeamPickerActivity;
 import com.android.ichooseyou.activity.WheelOfNamesActivity;
@@ -76,6 +80,21 @@ public class QuickRandomizeFragment extends Fragment {
         MaterialButton wheelOfNamesButton = view.findViewById(R.id.wheel_of_names_button);
         wheelOfNamesButton.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), WheelOfNamesActivity.class));
+        });
+
+        MaterialButton colorPickerButton = view.findViewById(R.id.color_picker_button);
+        colorPickerButton.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), ColorPickerActivity.class));
+        });
+
+        MaterialButton decisionMakerButton = view.findViewById(R.id.decision_maker_button);
+        decisionMakerButton.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), DecisionMakerActivity.class));
+        });
+
+        MaterialButton lotteryButton = view.findViewById(R.id.lottery_button);
+        lotteryButton.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), LotteryActivity.class));
         });
     }
 }

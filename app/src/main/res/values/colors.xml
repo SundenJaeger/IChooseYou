@@ -10,8 +10,18 @@
     <color name="white">#FFFFFF</color>
     <color name="primary_red">#D20103</color>
     <color name="primary_red_dark">#A00000</color>
-    <color name="rolling_text_color">#FF9800</color>
-    <color name="result_text_color">#333333</color>
     <color name="selected_team_color">#D20103</color>
     <color name="text_dark">#333333</color>
+    <color name="red_200">#FFCDD2</color>
+    <color name="red_500">#F44336</color>
+    <color name="red_700">#D32F2F</color>
+    <color name="rolling_text_color">#FF9800</color>
+    <color name="result_text_color">#D20103</color>
+    <color name="lottery_highlight">#FFF3E0</color>
+    <color name="team_red">#EF5350</color>
+    <color name="team_blue">#42A5F5</color>
+    <color name="team_green">#66BB6A</color>
+    <color name="team_yellow">#FFEE58</color>
+    <color name="team_purple">#AB47BC</color>
+    <color name="team_orange">#FFA726</color>
 </resources>
