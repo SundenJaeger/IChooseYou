@@ -61,14 +61,6 @@
                             android:text="John Doe"
                             android:textColor="#212121"
                             android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="User Type"
-                            android:textColor="#757575"
-                            android:textSize="12sp" />
                     </LinearLayout>
 
                     <ImageButton

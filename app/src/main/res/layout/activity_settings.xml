@@ -87,108 +87,11 @@
                         android:layout_marginHorizontal="16dp"
                         android:background="#EEEEEE" />
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/privacy_policy_button"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="start|center_vertical"
-                        android:paddingStart="16dp"
-                        android:text="Privacy Policy"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textColor="#212121"
-                        android:textSize="16sp"
-                        app:icon="@drawable/privacy_icon"
-                        app:iconGravity="textStart"
-                        app:iconPadding="16dp"
-                        app:iconSize="24dp"
-                        app:iconTint="#D20103" />
-
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginHorizontal="16dp"
                         android:background="#EEEEEE" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/notifications_button"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="start|center_vertical"
-                        android:paddingStart="16dp"
-                        android:text="Notifications"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textColor="#212121"
-                        android:textSize="16sp"
-                        app:iconGravity="textStart"
-                        app:iconPadding="16dp"
-                        app:iconSize="24dp"
-                        app:iconTint="#D20103" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Help &amp; Support"
-                android:textColor="#212121"
-                android:textSize="20sp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/contact_support_button"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="start|center_vertical"
-                        android:paddingStart="16dp"
-                        android:text="Contact Support"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textColor="#212121"
-                        android:textSize="16sp"
-                        app:iconGravity="textStart"
-                        app:iconPadding="16dp"
-                        app:iconSize="24dp"
-                        app:iconTint="#D20103" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginHorizontal="16dp"
-                        android:background="#EEEEEE" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/faq_button"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="start|center_vertical"
-                        android:paddingStart="16dp"
-                        android:text="FAQ"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textColor="#212121"
-                        android:textSize="16sp"
-                        app:iconGravity="textStart"
-                        app:iconPadding="16dp"
-                        app:iconSize="24dp"
-                        app:iconTint="#D20103" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

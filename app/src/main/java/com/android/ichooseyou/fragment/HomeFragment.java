@@ -2,12 +2,16 @@ package com.android.ichooseyou.fragment;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,8 +25,11 @@ import com.android.ichooseyou.model.User;
 import com.android.ichooseyou2.R;
 import com.android.ichooseyou.activity.SectionDetailActivity;
 
+import java.io.IOException;
+
 public class HomeFragment extends Fragment {
     private TextView landPageUsername, welcomeUser;
+    private ImageView profileImage; // Add this line to reference the profile image
     private User user;
     private LinearLayout sectionsContainer;
     private MaterialButton addSectionButton;
@@ -42,6 +49,7 @@ public class HomeFragment extends Fragment {
 
         landPageUsername = view.findViewById(R.id.land_page_username);
         welcomeUser = view.findViewById(R.id.welcome_user);
+        profileImage = view.findViewById(R.id.profile_image); // Get reference to the profile image
 
         // Get the container where sections will be added
         sectionsContainer = view.findViewById(R.id.sections_container);
@@ -75,12 +83,47 @@ public class HomeFragment extends Fragment {
         com.google.android.material.floatingactionbutton.FloatingActionButton fabAdd = view.findViewById(R.id.fab_add);
         fabAdd.setOnClickListener(v -> showAddSectionDialog());
 
+        // Update UI with user data
+        updateUI();
+
+        return view;
+    }
+
+    /**
+     * Update UI with current user data
+     */
+    private void updateUI() {
         if (user != null) {
             landPageUsername.setText(user.getName());
             welcomeUser.setText("Welcome, " + user.getName() + "!");
-        }
 
-        return view;
+            // Update profile image if available
+            updateProfileImage();
+        }
+    }
+
+    /**
+     * Update profile image based on user data
+     */
+    private void updateProfileImage() {
+        if (user != null && user.getProfileImageUri() != null && !user.getProfileImageUri().isEmpty()) {
+            try {
+                Uri imageUri = Uri.parse(user.getProfileImageUri());
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(
+                        requireActivity().getContentResolver(), imageUri);
+                profileImage.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Fallback to default image if there's an error loading the image
+                profileImage.setImageResource(R.drawable.user);
+            } catch (Exception e) {
+                e.printStackTrace();
+                profileImage.setImageResource(R.drawable.user);
+            }
+        } else {
+            // Set default image if no profile image URI exists
+            profileImage.setImageResource(R.drawable.user);
+        }
     }
 
     /**
@@ -180,5 +223,13 @@ public class HomeFragment extends Fragment {
         Intent intent = new Intent(requireContext(), SectionDetailActivity.class);
         intent.putExtra("SECTION_NAME", sectionName);
         startActivity(intent);
+    }
+
+    public void updateUserData(User updatedUser) {
+        this.user = updatedUser;
+        // Only update UI if the fragment is visible/created
+        if (getView() != null) {
+            updateUI(); // Call updateUI instead of setting text directly
+        }
     }
 }

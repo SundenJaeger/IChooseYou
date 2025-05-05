@@ -3,6 +3,7 @@ package com.android.ichooseyou.activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -22,14 +23,15 @@ import java.util.List;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
-
     private TextInputEditText usernameField;
     private TextInputEditText emailField;
     private TextInputEditText passwordField;
+    private CheckBox termsCheckbox;
     private MaterialButton createAccountButton;
     private TextView backTextButton;
 
     private String username, password, email;
+    private boolean agreed;
 
     private final List<User> userList = UserManager.INSTANCE.getUserList();
     private final StringBuilder sb = new StringBuilder();
@@ -42,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         usernameField = findViewById(R.id.username);
         emailField = findViewById(R.id.email);
         passwordField = findViewById(R.id.password);
+        termsCheckbox = findViewById(R.id.terms_checkbox);
 
         createAccountButton = findViewById(R.id.register_button);
         backTextButton = findViewById(R.id.back_button);
@@ -68,6 +71,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (password.isEmpty()) {
             sb.append("Password field is empty.\n");
+        }
+
+        if (!termsCheckbox.isChecked()) {
+            sb.append("Check Terms & Conditions to proceed.\n");
         }
 
         if (sb.length() > 0) {

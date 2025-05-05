@@ -2,25 +2,25 @@ package com.android.ichooseyou.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 
-import java.net.URL;
-
 public class User implements Parcelable {
     private String name, password, email;
+    private String profileImageUri; // Add this to store the profile image URI
 
     public User(String name, String password, String email) {
         this.name = name;
         this.password = password;
         this.email = email;
+        this.profileImageUri = null; // Default to no image
     }
 
     protected User(Parcel in) {
         name = in.readString();
         password = in.readString();
         email = in.readString();
+        profileImageUri = in.readString();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -45,6 +45,7 @@ public class User implements Parcelable {
         dest.writeString(name);
         dest.writeString(password);
         dest.writeString(email);
+        dest.writeString(profileImageUri);
     }
 
     public String getName() {
@@ -69,5 +70,13 @@ public class User implements Parcelable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getProfileImageUri() {
+        return profileImageUri;
+    }
+
+    public void setProfileImageUri(String profileImageUri) {
+        this.profileImageUri = profileImageUri;
     }
 }
